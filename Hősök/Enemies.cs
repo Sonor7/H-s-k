@@ -14,14 +14,14 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         public static int EnemyBaseDamage { get; set; }
         public static int EnemyBaseHitChance { get; set; }
         public static int EnemyBaseArmor { get; set; }
-        public static int EnemyBaseCritChance { get; set; }
-        public static int EnemyBaseCritDamage { get; set; }
+        public static int EnemyCritChance { get; set; }
         public static int EnemyBaseHealth;
         //ValueModifiers
         public static int EnemyWeaponDamageModifier { get; set; }
         public static int EnemyWeaponAttackModifier { get; set; }
         public static int EnemyArmorModifier { get; set; }
         public static int EnemyHitChanceModifier;
+        public static int EnemyCritDamage { get; set; }
         //TotalValues
         public static int EnemyTotalDamage = EnemyBaseDamage + EnemyWeaponDamageModifier;
         public static int EnemyTotalDefence = EnemyBaseDefence + EnemyArmorModifier;

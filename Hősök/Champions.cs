@@ -15,7 +15,6 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int BaseHitChance { get; set; }
         public static int BaseArmor { get; set; }
         public static int BaseCritChance { get; set; }
-        public static int BaseCritDamage { get; set; }
         public static int BaseHealth;
         //ValueModifiers
         public static int WeaponDamageModifier { get; set; }
@@ -23,6 +22,8 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int ArmorModifier { get; set; }
         public static int HealthModifiers;
         public static int HitChanceModifier;
+        public static int CritChanceModifier;
+        public static int CritDamageModifier { get; set; }//amivel megszorzom a dmg-t h megkapjam a crit dmg-t
         //String Values
         public static string Name;
         //TotalValues
@@ -30,7 +31,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int TotalDefence = BaseDefence + ArmorModifier;
         public static int TotalHealth = BaseHealth + HealthModifiers;
         public static int TotalHitChance = BaseHitChance + HitChanceModifier;
-
+        public static int TotalCritChance = BaseCritChance + CritChanceModifier;
 
         public static void Champion()
         {
@@ -48,7 +49,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
             Champions.BaseHitChance = 10;
             Champions.BaseArmor = 1;
             Champions.BaseCritChance = 1;
-            Champions.BaseCritDamage = 1;
+            Champions.CritDamageModifier = 1;
             Champions.Name = "Béla";
 
         }
