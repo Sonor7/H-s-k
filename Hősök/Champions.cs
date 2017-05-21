@@ -16,12 +16,20 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int BaseArmor { get; set; }
         public static int BaseCritChance { get; set; }
         public static int BaseCritDamage { get; set; }
+        public static int BaseHealth;
         //ValueModifiers
         public static int WeaponDamageModifier { get; set; }
         public static int WeaponAttackModifier { get; set; }
         public static int ArmorModifier { get; set; }
+        public static int HealthModifiers;
+
         //String Values
         public static string Name;
+        //TotalValues
+        public static int TotalDamage = BaseDamage + WeaponDamageModifier;
+        public static int TotalDefence = BaseDefence + ArmorModifier;
+        public static int TotalHealth = BaseHealth + HealthModifiers;
+
 
 
         public static void Champion()
@@ -33,10 +41,11 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
     {
         public void Barbarian()
         {
-            Champions.BaseAttack = 1;
+            Champions.BaseHealth = 100;
+            Champions.BaseAttack = 10;
             Champions.BaseDefence = 1;
-            Champions.BaseDamage = 1;
-            Champions.BaseHitChance = 1;
+            Champions.BaseDamage = 15;
+            Champions.BaseHitChance = 10;
             Champions.BaseArmor = 1;
             Champions.BaseCritChance = 1;
             Champions.BaseCritDamage = 1;

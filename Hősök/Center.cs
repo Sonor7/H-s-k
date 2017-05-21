@@ -12,11 +12,7 @@ namespace Hősök
         public static bool HasCharacter;
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Welcome To the Champions");
-            Console.ReadLine();
-            Console.Clear();
-            Console.ResetColor();
+            Introduction();
             while(ExitCode == false)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -49,6 +45,14 @@ namespace Hősök
         public static void DisplayStats()
         {
             Console.WriteLine("Your are" + Champions.Name + "Your base attack is " +Champions.BaseAttack + " Your base defence is " +Champions.BaseDefence);
+        }
+        public static void Introduction()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Welcome To the Champions");
+            Console.Clear();
+            Console.ResetColor();
+            Console.ReadLine();
         }
     }
 }
