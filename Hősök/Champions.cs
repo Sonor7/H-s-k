@@ -22,14 +22,14 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int WeaponAttackModifier { get; set; }
         public static int ArmorModifier { get; set; }
         public static int HealthModifiers;
-
+        public static int HitChanceModifier;
         //String Values
         public static string Name;
         //TotalValues
         public static int TotalDamage = BaseDamage + WeaponDamageModifier;
         public static int TotalDefence = BaseDefence + ArmorModifier;
         public static int TotalHealth = BaseHealth + HealthModifiers;
-
+        public static int TotalHitChance = BaseHitChance + HitChanceModifier;
 
 
         public static void Champion()

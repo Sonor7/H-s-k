@@ -9,6 +9,7 @@ namespace Hősök
     class Center
     {   //Menu Related Values
         public static bool ExitCode;
+        public static bool LocalWannaExit = false; //Set this to true when shopping or something.
         public static bool HasCharacter;
         static void Main(string[] args)
         {
@@ -27,13 +28,19 @@ namespace Hősök
                         break;
                     case 2://Inventory + equip items
                         break;
-                    case 3://Some kind of shop
+                    case 3://Some kind of shop, is Settings.CanShop = true
                         break;
                     case 4:
                         break;
                     case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
-                        DisplayStats();
-                        break;
+                        
+                        while (Center.LocalWannaExit == false)
+                        {
+                            DisplayStats();
+                            Settings.DisplaySetting();
+                            WhatHappensNext();
+                        }
+                            break;
                     case 6:
                         Console.WriteLine("Thank you for playing");
                         ExitCode = true;
@@ -53,6 +60,30 @@ namespace Hősök
             Console.Clear();
             Console.ResetColor();
             Console.ReadLine();
+        }
+        public static void WhatHappensNext()//If-else a settings alapján
+        {
+            if (Settings.CanFight == true && Settings.MustFight == true)
+            { // Harc
+            }
+            else if (Settings.CanFight == true)
+            {
+                // Szét akarsz verni valakit csak úgy?
+            }
+            else if (Settings.CanRest == true)
+            {
+                //Akarsz Pihenni?
+            }
+            else if (Settings.CanShop == true)
+            {
+                // Akarsz vásárolni?
+            }
+            else if (Settings.CanExit == true)
+            {
+                Console.WriteLine("Ki akarsz lépni?Y/N");
+                string Exit = Console.ReadLine();
+                if (Exit == "Y") { Center.LocalWannaExit = true; }
+            }
         }
     }
 }

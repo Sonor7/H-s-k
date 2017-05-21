@@ -21,9 +21,12 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         public static int EnemyWeaponDamageModifier { get; set; }
         public static int EnemyWeaponAttackModifier { get; set; }
         public static int EnemyArmorModifier { get; set; }
+        public static int EnemyHitChanceModifier;
         //TotalValues
         public static int EnemyTotalDamage = EnemyBaseDamage + EnemyWeaponDamageModifier;
         public static int EnemyTotalDefence = EnemyBaseDefence + EnemyArmorModifier;
+        public static int EnemyTotalHitChance = EnemyBaseHitChance + EnemyHitChanceModifier;
+
 
     }
     class FallenCreator
