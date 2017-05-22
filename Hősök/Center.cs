@@ -11,17 +11,21 @@ namespace Hősök
         public static bool ExitCode;
         public static bool LocalWannaExit = false; //Set this to true when shopping or something.
         public static bool HasCharacter;
+        
+
         static void Main(string[] args)
         {
             Introduction();
             while(ExitCode == false)
             {
+                int LocalCharacterChosen;
+               
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
-                int LocalCharacterChosen = Convert.ToInt32(Console.ReadLine());
+                LocalCharacterChosen = SetNumber();
                 if (LocalCharacterChosen == 1) { new BarbarianCreator(); Console.WriteLine("You have Chosen the mighty barbarian"); }
                 Console.WriteLine("Chose a Menu Option");
-                int MenuChoice = Convert.ToInt32(Console.ReadLine());
+                int MenuChoice = SetNumber();
                 switch (MenuChoice)
                 {
                     case 1:
@@ -91,5 +95,31 @@ namespace Hősök
                 if (Exit == "Y") { Center.LocalWannaExit = true; }
             }
         }
+        public static int SetNumber()
+        {
+            int ReadNumeric=0;
+            int n;
+            bool NumberOrNot = false;
+            while (NumberOrNot == false)
+            {
+                try
+                {
+                   // ReadNumeric = Console.ReadLine();
+
+                    //NumberOrNot = int.TryParse(ReadNumeric, out n);
+                    ReadNumeric = Convert.ToInt32(Console.ReadLine());
+                    NumberOrNot = true;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    NumberOrNot = false;
+
+                }
+
+            }
+            return ReadNumeric;
+        }
     }
+   
 }

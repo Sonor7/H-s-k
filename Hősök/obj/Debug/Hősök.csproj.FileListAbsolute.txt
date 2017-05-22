@@ -4,3 +4,9 @@ C:\Users\igabor\H-s-k\Hősök\bin\Debug\Hősök.pdb
 C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
 C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.exe
 C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.pdb
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\bin\Debug\Hősök.exe.config
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\bin\Debug\Hősök.exe
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\bin\Debug\Hősök.pdb
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.exe
+C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.pdb
