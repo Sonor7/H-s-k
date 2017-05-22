@@ -44,6 +44,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
             }
             //loot
             Console.WriteLine("A szörny meghalt");
+            
         }
         public static int ChampionHitChance()
         {

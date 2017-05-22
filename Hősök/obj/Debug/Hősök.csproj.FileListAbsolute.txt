@@ -1,0 +1,6 @@
+C:\Users\igabor\H-s-k\Hősök\bin\Debug\Hősök.exe.config
+C:\Users\igabor\H-s-k\Hősök\bin\Debug\Hősök.exe
+C:\Users\igabor\H-s-k\Hősök\bin\Debug\Hősök.pdb
+C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
+C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.exe
+C:\Users\igabor\H-s-k\Hősök\obj\Debug\Hősök.pdb

@@ -62,6 +62,7 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
 
             Console.WriteLine("Prepare for trouble");
             //itt következik a harc
+            NewEnemy.Randomizer();
             Fight.Battle();
         }
         public static int RandomizeSetting()

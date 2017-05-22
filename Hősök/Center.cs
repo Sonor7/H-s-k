@@ -17,27 +17,31 @@ namespace Hősök
             while(ExitCode == false)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Choose and option!\n Barbarian(1)\n");
+                Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
+                int LocalCharacterChosen = Convert.ToInt32(Console.ReadLine());
+                if (LocalCharacterChosen == 1) { new BarbarianCreator(); Console.WriteLine("You have Chosen the mighty barbarian"); }
+                Console.WriteLine("Chose a Menu Option");
                 int MenuChoice = Convert.ToInt32(Console.ReadLine());
                 switch (MenuChoice)
                 {
-                    case 1://character creation
-                        Console.WriteLine("Please choose a character!");
-                        int LocalCharacterChosen = Convert.ToInt32(Console.ReadLine());
-                        if (LocalCharacterChosen == 1) { new BarbarianCreator(); Console.WriteLine("You have Chosen the mighty barbarian"); }
+                    case 1:
+                        Console.WriteLine("Itt még nicns semmi");
                         break;
                     case 2://Inventory + equip items
+                        Console.WriteLine("Itt még nicns semmi");
                         break;
                     case 3://Some kind of shop, is Settings.CanShop = true
+                        Console.WriteLine("Itt még nicns semmi");
                         break;
                     case 4:
+                        Console.WriteLine("Itt még nicns semmi");
                         break;
                     case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
                         
                         while (Center.LocalWannaExit == false)
                         {
                             DisplayStats();
-                            Settings.DisplaySetting();
+                            Settings.DisplaySetting();//Ez randomizál is!
                             WhatHappensNext();
                         }
                             break;
@@ -46,6 +50,7 @@ namespace Hősök
                         ExitCode = true;
                         break;
                 }
+                Console.ResetColor();
                 Console.ReadLine();
             }
         }
@@ -65,6 +70,7 @@ namespace Hősök
         {
             if (Settings.CanFight == true && Settings.MustFight == true)
             { // Harc
+                Fight.Battle();
             }
             else if (Settings.CanFight == true)
             {
