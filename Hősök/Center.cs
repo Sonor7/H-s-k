@@ -22,9 +22,9 @@ namespace Hősök
                
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
-                LocalCharacterChosen = SetNumber();
+                LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
                 if (LocalCharacterChosen == 1) { new BarbarianCreator(); Console.WriteLine("You have Chosen the mighty barbarian"); }
-                Console.WriteLine("Chose a Menu Option");
+                Console.WriteLine("Chose a Menu Option(5)");
                 int MenuChoice = SetNumber();
                 switch (MenuChoice)
                 {
@@ -45,7 +45,7 @@ namespace Hősök
                         while (Center.LocalWannaExit == false)
                         {
                             DisplayStats();
-                            Settings.DisplaySetting();//Ez randomizál is!
+                            Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
                             WhatHappensNext();
                         }
                             break;
@@ -66,9 +66,9 @@ namespace Hősök
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Welcome To the Champions");
-            Console.Clear();
             Console.ResetColor();
             Console.ReadLine();
+            Console.Clear();
         }
         public static void WhatHappensNext()//If-else a settings alapján
         {

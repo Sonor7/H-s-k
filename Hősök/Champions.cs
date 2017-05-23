@@ -9,21 +9,21 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
     class Champions
     {
         //BaseValues
-        public static int BaseAttack { get; set; }
-        public static int BaseDefence { get; set; }
-        public static int BaseDamage { get; set; }
-        public static int BaseHitChance { get; set; }
-        public static int BaseArmor { get; set; }
-        public static int BaseCritChance { get; set; }
+        public static int BaseAttack;
+        public static int BaseDefence;
+        public static int BaseDamage;
+        public static int BaseHitChance;
+        public static int BaseArmor;
+        public static int BaseCritChance;
         public static int BaseHealth;
         //ValueModifiers
-        public static int WeaponDamageModifier { get; set; }
-        public static int WeaponAttackModifier { get; set; }
-        public static int ArmorModifier { get; set; }
+        public static int WeaponDamageModifier;
+        public static int WeaponAttackModifier;
+        public static int ArmorModifier;
         public static int HealthModifiers;
         public static int HitChanceModifier;
         public static int CritChanceModifier;
-        public static int CritDamageModifier { get; set; }//amivel megszorzom a dmg-t h megkapjam a crit dmg-t
+        public static int CritDamageModifier;//amivel megszorzom a dmg-t h megkapjam a crit dmg-t
         //String Values
         public static string Name;
         //TotalValues

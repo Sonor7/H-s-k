@@ -17,11 +17,11 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
         //public static int Set;
 
 
-        public static void DisplaySetting()
+        public static void DisplaySetting(int SetNum)
         {
-            int Set = RandomizeSetting(); //Randomizálja, h milyen set legyen
+            int Set = SetNum;//RandomizeSetting(); //Randomizálja, h milyen set legyen
             if (Set == 0)
-            {
+            { 
                 SettingForest();
             }
             else if (Set == 1)
@@ -41,6 +41,8 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanFight = false;
             CanExit = true;
             Console.WriteLine("You have reached a forest");
+            Console.ReadLine();
+            
             //An enemy to fight
             
         }
@@ -51,6 +53,7 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanFight = false;
             CanExit = true;
             Console.WriteLine("You have found a tavern, where you can drink, rest, and might even be able to shop");
+            Console.ReadLine();
         }
         public static void SettingDeepForest()//2
         {
@@ -67,10 +70,8 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
         }
         public static int RandomizeSetting()
         {
-            int Set;
             Random SetRnd = new Random();
-            SetRnd.Next(0, 2);
-            Set = Convert.ToInt32(SetRnd);
+            int Set = SetRnd.Next(0, 2);
             return Set;
         }
     }
