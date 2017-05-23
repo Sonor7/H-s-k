@@ -54,4 +54,15 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
 
         }
     }
+    class SetChampionValues
+    {
+        public static void ChampionValueSetter()
+        {
+            Champions.TotalDamage = Champions.BaseDamage + Champions.WeaponDamageModifier;
+            Champions.TotalDefence = Champions.BaseDefence + Champions.ArmorModifier;
+            Champions.TotalHealth = Champions.BaseHealth + Champions.HealthModifiers;
+            Champions.TotalHitChance = Champions.BaseHitChance + Champions.HitChanceModifier;
+            Champions.TotalCritChance = Champions.BaseCritChance + Champions.CritChanceModifier;
+        }
+    }
 }

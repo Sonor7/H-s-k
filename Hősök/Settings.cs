@@ -19,22 +19,22 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
 
         public static void DisplaySetting(int SetNum)
         {
-            int Set = SetNum;//RandomizeSetting(); //Randomizálja, h milyen set legyen
+            int Set = SetNum; //RandomizeSetting(); //Randomizálja, h milyen set legyen
             if (Set == 0)
             { 
                 SettingForest();
             }
-            else if (Set == 1)
+            else if (Set < 1)
             {
                 SettingTavern();
             }
-            else if (Set == 2)
+            else if (Set < 2)
             {
                 SettingDeepForest();
             }
         }
 
-        public static void SettingForest()//0
+        public static bool SettingForest()//0
         {
             CanRest = true;
             CanShop = false;
@@ -42,11 +42,13 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanExit = true;
             Console.WriteLine("You have reached a forest");
             Console.ReadLine();
+            return true;
+            
             
             //An enemy to fight
             
         }
-        public static void SettingTavern()//1
+        public static bool SettingTavern()//1
         {
             CanRest = true;
             CanShop = true;
@@ -54,8 +56,9 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanExit = true;
             Console.WriteLine("You have found a tavern, where you can drink, rest, and might even be able to shop");
             Console.ReadLine();
+            return true;
         }
-        public static void SettingDeepForest()//2
+        public static bool SettingDeepForest()//2
         {
             CanRest = false;
             CanShop = false;
@@ -67,12 +70,13 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             //itt következik a harc
             NewEnemy.Randomizer();
             Fight.Battle();
+            return true;
         }
         public static int RandomizeSetting()
         {
             Random SetRnd = new Random();
-            int Set = SetRnd.Next(0, 2);
-            return Set;
+            //int Set = SetRnd.Next(0, 2);
+            return SetRnd.Next(0,2);
         }
     }
 }

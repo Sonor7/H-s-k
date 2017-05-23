@@ -10,6 +10,7 @@ namespace Hősök
     {   //Menu Related Values
         public static bool ExitCode;
         public static bool LocalWannaExit = false; //Set this to true when shopping or something.
+        public static bool DisplayWannaexit = false;
         public static bool HasCharacter;
         
 
@@ -23,7 +24,10 @@ namespace Hősök
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
                 LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
-                if (LocalCharacterChosen == 1) { new BarbarianCreator(); Console.WriteLine("You have Chosen the mighty barbarian"); }
+                if (LocalCharacterChosen == 1) {
+                    BarbarianCreator Barb = new BarbarianCreator();
+                    Barb.Barbarian();
+                    Console.WriteLine("You have Chosen the mighty barbarian"); }
                 Console.WriteLine("Chose a Menu Option(5)");
                 int MenuChoice = SetNumber();
                 switch (MenuChoice)
@@ -44,8 +48,12 @@ namespace Hősök
                         
                         while (Center.LocalWannaExit == false)
                         {
+                            SetChampionValues.ChampionValueSetter();
                             DisplayStats();
-                            Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
+                            while (DisplayWannaexit == false)
+                            {
+                                Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
+                            }
                             WhatHappensNext();
                         }
                             break;
@@ -60,7 +68,7 @@ namespace Hősök
         }
         public static void DisplayStats()
         {
-            Console.WriteLine("Your are" + Champions.Name + "Your base attack is " +Champions.BaseAttack + " Your base defence is " +Champions.BaseDefence);
+            Console.WriteLine("Your are" + Champions.Name + "Your damage is " + Champions.TotalDamage + " Your defence is " + Champions.TotalDefence);
         }
         public static void Introduction()
         {
@@ -98,7 +106,7 @@ namespace Hősök
         public static int SetNumber()
         {
             int ReadNumeric=0;
-            int n;
+            //int n;
             bool NumberOrNot = false;
             while (NumberOrNot == false)
             {
