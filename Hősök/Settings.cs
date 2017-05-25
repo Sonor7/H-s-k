@@ -24,16 +24,19 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             { 
                 SettingForest();
                 EnterMenu();
+                DisplayAvailableOptions();//A bool-ok alapján kiírja a játékosnak, hogy a helyszínen mi lehetséges.
             }
-            else if (Set < 1)
+            else if (Set < 3)
             {
                 SettingTavern();
                 EnterMenu();
+                DisplayAvailableOptions();
             }
-            else if (Set < 2)
+            else if (Set < 5)
             {
                 SettingDeepForest();
                 EnterMenu();
+                DisplayAvailableOptions();
             }
         }
 
@@ -69,17 +72,18 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             MustFight = true;
             CanExit = false;
 
-            Console.WriteLine("Prepare for trouble");
+            Console.WriteLine("You ventured deep into the forest.\n Something followed you!\n Prepare for trouble");
             //itt következik a harc
             NewEnemy.Randomizer();
             Fight.Battle();
+            Console.ReadLine();
             return true;
         }
         public static int RandomizeSetting()
         {
             Random SetRnd = new Random();
             //int Set = SetRnd.Next(0, 2);
-            return SetRnd.Next(0,2);
+            return SetRnd.Next(0,5);
         }
         public static void EnterMenu()
         {
@@ -93,6 +97,21 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
                     Center.DisplayMenu();
                 }
                 else { Console.Clear(); }
+            }
+        }
+        public static void DisplayAvailableOptions()
+        {
+            if (CanRest == true)
+            {
+                Console.WriteLine("You can rest here");
+            }
+            if (CanShop == true)
+            {
+                Console.WriteLine("There is a shop here");
+            }
+            if(CanFight == true)
+            {
+                Console.WriteLine("You might be able to start a brawl here");
             }
         }
     }

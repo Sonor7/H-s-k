@@ -12,24 +12,28 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
         {
             while (Enemies.EnemyBaseHealth > 0)
             {
+                int LocalChampionDmg;
+                int LocalMonsterDmg;
                 //Hős megüti a szörnyet
                 ChampionHitChance();
+                EnemyHitChance();
                 if (Champions.TotalHitChance > 50)
                 {
                     ChampionCritChance();
-                    Enemies.EnemyBaseHealth = Enemies.EnemyBaseHealth - (Champions.TotalDamage - Enemies.EnemyTotalDefence);
-                    //kiírni h mitörtént
+                    LocalChampionDmg = Champions.TotalDamage - Enemies.EnemyTotalDefence;
+                    Enemies.EnemyBaseHealth = Enemies.EnemyBaseHealth - LocalChampionDmg;
+                    Console.WriteLine(LocalChampionDmg + "Champ Dmg");
                 }
                 else
                 {
-                    //Mellé ütött
+                    Console.WriteLine("The hero missed");
                 }
                 //Szörny megüti a hőst
                 if (Enemies.EnemyTotalHitChance > 50)
                 {
-                    EnemyCritChance();
-                    Champions.TotalHealth = Champions.TotalHealth - (Enemies.EnemyTotalDamage - Champions.TotalDefence);
-                    //kiírni h mitörtént
+                    LocalMonsterDmg = Enemies.EnemyTotalDamage - Champions.TotalDefence;
+                    Champions.TotalHealth = Champions.TotalHealth - LocalMonsterDmg;
+                    Console.WriteLine(LocalMonsterDmg + "Monster Dmg");
                     if (Champions.TotalHealth < 0)
                     {
                         //Meghalt a hős
@@ -39,33 +43,35 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                 }
                 else
                 {
-                    //mellé ütött a szörny
+                    Console.WriteLine("The monster has missed");
                 }
             }
             //loot
-            Console.WriteLine("A szörny meghalt");
+            Console.WriteLine("The monster has died");
+            Console.ReadLine();
             
         }
-        public static int ChampionHitChance()
+        public static void ChampionHitChance()
         {
             Random RndHitChance = new Random();
-            RndHitChance.Next(0, 100);
-            int HitChance = Convert.ToInt32(RndHitChance) + Champions.BaseHitChance;
-            return HitChance;
+            int LocalRndHitChance = RndHitChance.Next(0, 50);
+            Champions.HitChanceModifier = LocalRndHitChance;
+            SetChampionValues.ChampionValueSetter();
+            
         }
-        public static int EnemyHitChance()
+        public static void EnemyHitChance()
         {
             Random RndHitChance = new Random();
-            RndHitChance.Next(0, 100);
-            int EnemyHitChance = Convert.ToInt32(RndHitChance) + Enemies.EnemyBaseHitChance;
-            return EnemyHitChance;
+            int LocalRndHitChance = RndHitChance.Next(0, 50);
+            Enemies.EnemyHitChanceModifier = LocalRndHitChance;
+            SetEnemyValues.EnemyValueSetter();
+            
         }
         public static void ChampionCritChance()
-        {   int CritChance;
+        {   
             Random RndCritChance = new Random();
-            RndCritChance.Next(0, 100);
-            CritChance = Convert.ToInt32(RndCritChance);
-            if (CritChance < Champions.TotalCritChance)
+            int LocalRndCritChance = RndCritChance.Next(0, 100);
+            if (Champions.TotalCritChance > LocalRndCritChance )
             {
                 Champions.TotalDamage = Champions.TotalDamage * Champions.CritDamageModifier;
                 Console.WriteLine("Champion Critical Hit");
@@ -74,11 +80,9 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
         }
         public static void EnemyCritChance()
         {
-            int CritChance;
             Random RndCritChance = new Random();
-            RndCritChance.Next(0, 100);
-            CritChance = Convert.ToInt32(RndCritChance);
-            if (CritChance < Enemies.EnemyCritChance)
+            int LocalRndCritChance = RndCritChance.Next(0, 100);
+            if (Enemies.EnemyCritChance > LocalRndCritChance)
             {
                 Enemies.EnemyTotalDamage = Enemies.EnemyTotalDamage * Enemies.EnemyCritDamage;
                 Console.WriteLine("Enemy Critical Hit");

@@ -29,7 +29,7 @@ namespace Hősök
                     BarbarianCreator Barb = new BarbarianCreator();
                     Barb.Barbarian();
                     HasCharacter = true;
-                    Console.WriteLine("You have Chosen the mighty barbarian"); }
+                    Console.WriteLine("You have Chosen the mighty barbarian.\n Your journey begins"); }
                 DisplayMenu();       
                 Console.ResetColor();
                 Console.ReadLine();
@@ -47,7 +47,7 @@ namespace Hősök
             Console.ReadLine();
             Console.Clear();
         }
-        public static void WhatHappensNext()//If-else a settings alapján
+      /*  public static void WhatHappensNext()//If-else a settings alapján
         {
             if (Settings.CanFight == true && Settings.MustFight == true)
             { // Harc
@@ -71,7 +71,7 @@ namespace Hősök
                 string Exit = Console.ReadLine();
                 if (Exit == "Y") { Center.LocalWannaExit = true; }
             }
-        }
+        }*/
         public static int SetNumber()
         {
             int ReadNumeric=0;
@@ -107,10 +107,10 @@ namespace Hősök
                     Console.WriteLine("Itt még nicns semmi");
                     break;
                 case 2://Inventory + equip items
-                    Console.WriteLine("Itt még nicns semmi");
+                    Console.WriteLine("Itt még nicns átöltözési lehetőség");
                     break;
                 case 3://Some kind of shop, is Settings.CanShop = true
-                    Console.WriteLine("Itt még nicns semmi");
+                    Console.WriteLine("Itt még nicns a bolt");
                     break;
                 case 4:
                     Console.WriteLine("Itt még nicns semmi");
@@ -125,7 +125,7 @@ namespace Hősök
                         {
                             Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
                         }
-                        WhatHappensNext();
+                        //WhatHappensNext();
                     }
                     break;
                 case 6:

@@ -8,7 +8,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
 {
     class Enemies
     {
-        
+
         public static int EnemyBaseAttack { get; set; }
         public static int EnemyBaseDefence { get; set; }
         public static int EnemyBaseDamage { get; set; }
@@ -33,13 +33,13 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
     }
     class FallenCreator
     {
-        public  void Fallen()
+        public void Fallen()
         {
             Enemies.EnemyBaseHealth = 50;
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 5;
+            Enemies.EnemyBaseHitChance = 10;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
@@ -53,7 +53,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 5;
+            Enemies.EnemyBaseHitChance = 10;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
@@ -64,14 +64,27 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         public static void Randomizer()
         {
             Random RndEnemy = new Random();
-            if (RndEnemy.Next(0,1) == 0)
+            if (RndEnemy.Next(0, 1) == 0)
             {
                 FallenCreator Fallen = new FallenCreator();
+                Fallen.Fallen();
+                Console.WriteLine("Fallen");
             }
-            else if (RndEnemy.Next(0,1) == 1)
+            else if (RndEnemy.Next(0, 1) == 1)
             {
                 TaintedCreator Tainted = new TaintedCreator();
+                Tainted.Tainted();
+                Console.WriteLine("Tainted");
             }
+        }
+    }
+    class SetEnemyValues
+    {
+        public static void EnemyValueSetter()
+        {
+            Enemies.EnemyTotalDamage = Enemies.EnemyBaseDamage + Enemies.EnemyWeaponDamageModifier;
+            Enemies.EnemyTotalDefence = Enemies.EnemyBaseDefence + Enemies.EnemyArmorModifier;
+            Enemies.EnemyTotalHitChance = Enemies.EnemyBaseHitChance + Enemies.EnemyHitChanceModifier;
         }
     }
 }   
