@@ -10,3 +10,9 @@ C:\Users\Bela\Source\Repos\H-s-k\Hősök\bin\Debug\Hősök.pdb
 C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
 C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.exe
 C:\Users\Bela\Source\Repos\H-s-k\Hősök\obj\Debug\Hősök.pdb
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.exe.config
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.exe
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.pdb
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.exe
+C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.pdb

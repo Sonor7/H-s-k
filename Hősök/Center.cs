@@ -12,6 +12,7 @@ namespace Hősök
         public static bool LocalWannaExit = false; //Set this to true when shopping or something.
         public static bool DisplayWannaexit = false;
         public static bool HasCharacter;
+        public static int MenuChoice;
         
 
         static void Main(string[] args)
@@ -24,44 +25,12 @@ namespace Hősök
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
                 LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
-                if (LocalCharacterChosen == 1) {
+                if (LocalCharacterChosen == 1 && HasCharacter == false) {
                     BarbarianCreator Barb = new BarbarianCreator();
                     Barb.Barbarian();
+                    HasCharacter = true;
                     Console.WriteLine("You have Chosen the mighty barbarian"); }
-                Console.WriteLine("Chose a Menu Option(5)");
-                int MenuChoice = SetNumber();
-                switch (MenuChoice)
-                {
-                    case 1:
-                        Console.WriteLine("Itt még nicns semmi");
-                        break;
-                    case 2://Inventory + equip items
-                        Console.WriteLine("Itt még nicns semmi");
-                        break;
-                    case 3://Some kind of shop, is Settings.CanShop = true
-                        Console.WriteLine("Itt még nicns semmi");
-                        break;
-                    case 4:
-                        Console.WriteLine("Itt még nicns semmi");
-                        break;
-                    case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
-                        
-                        while (Center.LocalWannaExit == false)
-                        {
-                            SetChampionValues.ChampionValueSetter();
-                            DisplayStats();
-                            while (DisplayWannaexit == false)
-                            {
-                                Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
-                            }
-                            WhatHappensNext();
-                        }
-                            break;
-                    case 6:
-                        Console.WriteLine("Thank you for playing");
-                        ExitCode = true;
-                        break;
-                }
+                DisplayMenu();       
                 Console.ResetColor();
                 Console.ReadLine();
             }
@@ -127,6 +96,43 @@ namespace Hősök
 
             }
             return ReadNumeric;
+        }
+        public static void DisplayMenu()
+        {
+            Console.WriteLine("Choose a Menu Option(5)");
+            MenuChoice = SetNumber();
+            switch (MenuChoice)
+            {
+                case 1:
+                    Console.WriteLine("Itt még nicns semmi");
+                    break;
+                case 2://Inventory + equip items
+                    Console.WriteLine("Itt még nicns semmi");
+                    break;
+                case 3://Some kind of shop, is Settings.CanShop = true
+                    Console.WriteLine("Itt még nicns semmi");
+                    break;
+                case 4:
+                    Console.WriteLine("Itt még nicns semmi");
+                    break;
+                case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
+
+                    while (Center.LocalWannaExit == false)
+                    {
+                        SetChampionValues.ChampionValueSetter();
+                        DisplayStats();
+                        while (DisplayWannaexit == false)
+                        {
+                            Settings.DisplaySetting(Settings.RandomizeSetting());//Ez randomizál is!
+                        }
+                        WhatHappensNext();
+                    }
+                    break;
+                case 6:
+                    Console.WriteLine("Thank you for playing");
+                    ExitCode = true;
+                    break;
+            }
         }
     }
    

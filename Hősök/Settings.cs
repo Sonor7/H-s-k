@@ -23,14 +23,17 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             if (Set == 0)
             { 
                 SettingForest();
+                EnterMenu();
             }
             else if (Set < 1)
             {
                 SettingTavern();
+                EnterMenu();
             }
             else if (Set < 2)
             {
                 SettingDeepForest();
+                EnterMenu();
             }
         }
 
@@ -77,6 +80,20 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             Random SetRnd = new Random();
             //int Set = SetRnd.Next(0, 2);
             return SetRnd.Next(0,2);
+        }
+        public static void EnterMenu()
+        {
+            if (CanExit == true)
+            {
+                Console.WriteLine("Do you want to enter the menu?Y/N");
+                string LocalYesNo = Console.ReadLine();
+                if (LocalYesNo == "Y")
+                {
+                    Center.LocalWannaExit = true;
+                    Center.DisplayMenu();
+                }
+                else { Console.Clear(); }
+            }
         }
     }
 }
