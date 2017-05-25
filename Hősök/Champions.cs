@@ -45,11 +45,11 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
             Champions.BaseHealth = 100;
             Champions.BaseAttack = 10;
             Champions.BaseDefence = 1;
-            Champions.BaseDamage = 15;
-            Champions.BaseHitChance = 10;
+            Champions.BaseDamage = 10;
+            Champions.BaseHitChance = 20;
             Champions.BaseArmor = 1;
-            Champions.BaseCritChance = 1;
-            Champions.CritDamageModifier = 1;
+            Champions.BaseCritChance = 10;
+            Champions.CritDamageModifier = 2;
             Champions.Name = "Béla";
 
         }

@@ -31,6 +31,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                 //Szörny megüti a hőst
                 if (Enemies.EnemyTotalHitChance > 50)
                 {
+                    EnemyCritChance();
                     LocalMonsterDmg = Enemies.EnemyTotalDamage - Champions.TotalDefence;
                     Champions.TotalHealth = Champions.TotalHealth - LocalMonsterDmg;
                     Console.WriteLine(LocalMonsterDmg + "Monster Dmg");
@@ -74,7 +75,9 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
             if (Champions.TotalCritChance > LocalRndCritChance )
             {
                 Champions.TotalDamage = Champions.TotalDamage * Champions.CritDamageModifier;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Champion Critical Hit");
+                Console.ResetColor();
             }
             
         }
@@ -85,7 +88,9 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
             if (Enemies.EnemyCritChance > LocalRndCritChance)
             {
                 Enemies.EnemyTotalDamage = Enemies.EnemyTotalDamage * Enemies.EnemyCritDamage;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Enemy Critical Hit");
+                Console.ResetColor();
             }
 
         }
