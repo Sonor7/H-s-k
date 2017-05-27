@@ -80,17 +80,16 @@ namespace Hősök
         }
         public static void DisplayMenu()
         {
-            Console.WriteLine("Choose a Menu Option\nSemmi(1)\nEquip Items(2)\nSemmi(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
+            Console.WriteLine("Choose a Menu Option\nEquip Items(1)\nSave(2)\nLoad(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
             MenuChoice = SetNumber();
             switch (MenuChoice)
             {
                 case 1:
-                    Console.WriteLine("Itt még nicns semmi");
+                    Console.WriteLine("Here You Can Equip Items\n Enter the name of the item you want to equip");
+                    Inventory.ItemList();
+                    Items.Equip(Console.ReadLine());
                     break;
                 case 2://Inventory + equip items
-                    Console.WriteLine("Here You Can Equip Items\n Enter the name of the item you want to equip");
-                    //Display a list of the items you currently have
-                    Items.Equip(Console.ReadLine());
                     break;
                 case 3://Some kind of shop, is Settings.CanShop = true
                     Console.WriteLine("Itt még nicns a bolt");

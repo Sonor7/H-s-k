@@ -64,21 +64,25 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
     }
     class NewEnemy
     {
-        public static void Randomizer()
+        public static int Randomizer()
         {
             Random RndEnemy = new Random();
-            if (RndEnemy.Next(0, 1) == 0)
+            int EnemyNumber = RndEnemy.Next(0, 1);
+            if (EnemyNumber == 0)
             {
                 FallenCreator Fallen = new FallenCreator();
                 Fallen.Fallen();
                 Console.WriteLine("Fallen");
+                return EnemyNumber;
             }
-            else if (RndEnemy.Next(0, 1) == 1)
+            else if (EnemyNumber == 1)
             {
                 TaintedCreator Tainted = new TaintedCreator();
                 Tainted.Tainted();
                 Console.WriteLine("Tainted");
+                return EnemyNumber;
             }
+            else { return EnemyNumber; }
         }
     }
     class SetEnemyValues
