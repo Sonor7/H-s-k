@@ -10,37 +10,37 @@ namespace Hősök
     {
         public static void LevelUpper()
         {
-            if (Champions.XP > 100 && Champions.HosLevel == 0)
+            if (Champions.XP > 100 && Champions.ChampionLevel == 0)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 200 && Champions.HosLevel == 1)
+            if (Champions.XP > 200 && Champions.ChampionLevel == 1)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 300 && Champions.HosLevel == 2)
+            if (Champions.XP > 300 && Champions.ChampionLevel == 2)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 300 && Champions.HosLevel == 3)
+            if (Champions.XP > 300 && Champions.ChampionLevel == 3)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 400 && Champions.HosLevel == 4)
+            if (Champions.XP > 400 && Champions.ChampionLevel == 4)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 500 && Champions.HosLevel == 5)
+            if (Champions.XP > 500 && Champions.ChampionLevel == 5)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 600 && Champions.HosLevel == 6)
+            if (Champions.XP > 600 && Champions.ChampionLevel == 6)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
-            if (Champions.XP > 700 && Champions.HosLevel == 7)
+            if (Champions.XP > 700 && Champions.ChampionLevel == 7)
             {
-                Champions.HosLevel++;
+                Champions.ChampionLevel++;
             }
         }
     }

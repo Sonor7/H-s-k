@@ -18,26 +18,32 @@ namespace Hősök
         static void Main(string[] args)
         {
             Introduction();
-            while(ExitCode == false)
+            while(ExitCode == false)//Amíg a játék tart
             {
                 int LocalCharacterChosen;
                
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
-                LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
-                if (LocalCharacterChosen == 1 && HasCharacter == false) {
-                    BarbarianCreator Barb = new BarbarianCreator();
-                    Barb.Barbarian();
-                    HasCharacter = true;
-                    Console.WriteLine("You have Chosen the mighty barbarian.\n Your journey begins"); }
-                DisplayMenu();       
+                if (HasCharacter == false)//Nincs kari, muszáj csinálni egyet
+                {
+                    Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
+
+                    LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
+                    if (LocalCharacterChosen == 1 && HasCharacter == false)//Nincs kari, de akar egy barbárt
+                    {
+                        BarbarianCreator Barb = new BarbarianCreator();
+                        Barb.Barbarian();
+                        HasCharacter = true;
+                        Console.WriteLine("You have Chosen the mighty barbarian.\n Your journey begins");
+                    }
+                }
+                DisplayMenu();//Ez itt a játék közepe
                 Console.ResetColor();
                 Console.ReadLine();
             }
         }
         public static void DisplayStats()
         {
-            Console.WriteLine("Your are" + Champions.Name + "Your damage is " + Champions.TotalDamage + " Your defence is " + Champions.TotalDefence);
+            Console.WriteLine("Your are" + Champions.Name + " a level " + Champions.ChampionLevel + 1 + " champion. Your damage is " + Champions.TotalDamage + " Your defence is " + Champions.TotalDefence);
         }
         public static void Introduction()
         {
@@ -47,31 +53,6 @@ namespace Hősök
             Console.ReadLine();
             Console.Clear();
         }
-      /*  public static void WhatHappensNext()//If-else a settings alapján
-        {
-            if (Settings.CanFight == true && Settings.MustFight == true)
-            { // Harc
-                Fight.Battle();
-            }
-            else if (Settings.CanFight == true)
-            {
-                // Szét akarsz verni valakit csak úgy?
-            }
-            else if (Settings.CanRest == true)
-            {
-                //Akarsz Pihenni?
-            }
-            else if (Settings.CanShop == true)
-            {
-                // Akarsz vásárolni?
-            }
-            else if (Settings.CanExit == true)
-            {
-                Console.WriteLine("Ki akarsz lépni?Y/N");
-                string Exit = Console.ReadLine();
-                if (Exit == "Y") { Center.LocalWannaExit = true; }
-            }
-        }*/
         public static int SetNumber()
         {
             int ReadNumeric=0;
@@ -99,7 +80,7 @@ namespace Hősök
         }
         public static void DisplayMenu()
         {
-            Console.WriteLine("Choose a Menu Option\nSemmi(1)\nSemmi(2)\nSemmi(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
+            Console.WriteLine("Choose a Menu Option\nSemmi(1)\nEquip Items(2)\nSemmi(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
             MenuChoice = SetNumber();
             switch (MenuChoice)
             {
@@ -107,7 +88,9 @@ namespace Hősök
                     Console.WriteLine("Itt még nicns semmi");
                     break;
                 case 2://Inventory + equip items
-                    Console.WriteLine("Itt még nicns átöltözési lehetőség");
+                    Console.WriteLine("Here You Can Equip Items\n Enter the name of the item you want to equip");
+                    //Display a list of the items you currently have
+                    Items.Equip(Console.ReadLine());
                     break;
                 case 3://Some kind of shop, is Settings.CanShop = true
                     Console.WriteLine("Itt még nicns a bolt");

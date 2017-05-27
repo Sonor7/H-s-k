@@ -9,7 +9,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
     class Champions
     {
         //BaseValues
-        public static int BaseAttack;
+        //public static int BaseAttack;
         public static int BaseDefence;
         public static int BaseDamage;
         public static int BaseHitChance;
@@ -17,13 +17,13 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int BaseCritChance;
         public static int BaseHealth;
         public static int XP;
-        public static int HosLevel;
+        public static int ChampionLevel;
         //ValueModifiers
         public static int WeaponDamageModifier;
-        public static int WeaponAttackModifier;
+       // public static int WeaponAttackModifier;
         public static int ArmorModifier;
         public static int HealthModifiers;
-        public static int HitChanceModifier;
+        public static int WeaponHitChanceModifier;
         public static int CritChanceModifier;
         public static int CritDamageModifier;//amivel megszorzom a dmg-t h megkapjam a crit dmg-t
         //String Values
@@ -32,7 +32,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int TotalDamage = BaseDamage + WeaponDamageModifier;
         public static int TotalDefence = BaseDefence + ArmorModifier;
         public static int TotalHealth = BaseHealth + HealthModifiers;
-        public static int TotalHitChance = BaseHitChance + HitChanceModifier;
+        public static int TotalHitChance = BaseHitChance + WeaponHitChanceModifier;
         public static int TotalCritChance = BaseCritChance + CritChanceModifier;
 
         public static void Champion()
@@ -45,7 +45,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public void Barbarian()
         {
             Champions.BaseHealth = 100;
-            Champions.BaseAttack = 10;
+            //Champions.BaseAttack = 10;
             Champions.BaseDefence = 1;
             Champions.BaseDamage = 10;
             Champions.BaseHitChance = 20;
@@ -63,7 +63,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
             Champions.TotalDamage = Champions.BaseDamage + Champions.WeaponDamageModifier;
             Champions.TotalDefence = Champions.BaseDefence + Champions.ArmorModifier;
             Champions.TotalHealth = Champions.BaseHealth + Champions.HealthModifiers;
-            Champions.TotalHitChance = Champions.BaseHitChance + Champions.HitChanceModifier;
+            Champions.TotalHitChance = Champions.BaseHitChance + Champions.WeaponHitChanceModifier;
             Champions.TotalCritChance = Champions.BaseCritChance + Champions.CritChanceModifier;
         }
     }

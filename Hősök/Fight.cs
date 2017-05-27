@@ -57,7 +57,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
         {
             Random RndHitChance = new Random();
             int LocalRndHitChance = RndHitChance.Next(0, 50);
-            Champions.HitChanceModifier = LocalRndHitChance;
+            Champions.WeaponHitChanceModifier = LocalRndHitChance;
             SetChampionValues.ChampionValueSetter();
             
         }

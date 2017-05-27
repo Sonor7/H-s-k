@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Center.cs" />
     <Compile Include="Champions.cs" />
+    <Compile Include="Items.cs" />
     <Compile Include="LevelUp.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Fight.cs" />
