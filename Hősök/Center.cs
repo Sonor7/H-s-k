@@ -99,7 +99,7 @@ namespace Hősök
         }
         public static void DisplayMenu()
         {
-            Console.WriteLine("Choose a Menu Option(5)");
+            Console.WriteLine("Choose a Menu Option\nSemmi(1)\nSemmi(2)\nSemmi(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
             MenuChoice = SetNumber();
             switch (MenuChoice)
             {
@@ -113,7 +113,7 @@ namespace Hősök
                     Console.WriteLine("Itt még nicns a bolt");
                     break;
                 case 4:
-                    Console.WriteLine("Itt még nicns semmi");
+                    Console.WriteLine("Itt még nicns semmi");//Save?
                     break;
                 case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
 

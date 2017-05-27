@@ -49,6 +49,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
             }
             //loot
             Console.WriteLine("The monster has died");
+            Champions.XP = Champions.XP + Enemies.EnemyXpToGive;
             Console.ReadLine();
             
         }
