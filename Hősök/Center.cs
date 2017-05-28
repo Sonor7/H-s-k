@@ -80,7 +80,7 @@ namespace Hősök
         }
         public static void DisplayMenu()
         {
-            Console.WriteLine("Choose a Menu Option\nEquip Items(1)\nSave(2)\nLoad(3)\nSemmi(4)\nDiscovery and Fight(5)\nQuit(6)");
+            Console.WriteLine("Choose a Menu Option\nEquip Items(1)\nSave(2)\nLoad(3)\nShop(4)\nDiscovery and Fight(5)\nQuit(6)");
             MenuChoice = SetNumber();
             switch (MenuChoice)
             {
@@ -92,10 +92,10 @@ namespace Hősök
                 case 2://Inventory + equip items
                     break;
                 case 3://Some kind of shop, is Settings.CanShop = true
-                    Console.WriteLine("Itt még nicns a bolt");
                     break;
                 case 4:
-                    Console.WriteLine("Itt még nicns semmi");//Save?
+                    Shop.Welcome();
+                    Shop.Buy();
                     break;
                 case 5://fighting + discovery(fights should take place at a randomized setting, and begin with your stats displaying)
 

@@ -8,10 +8,10 @@ namespace Hősök
 {
     class Inventory
     {
-        public static List<string> Item = new List<string>();
+        public static List<string> Items = new List<string>();
         public static void ItemList()
         {
-            Item.ForEach(Console.WriteLine);
+            Items.ForEach(Console.WriteLine);
         }
     }
     class Loot
@@ -26,7 +26,7 @@ namespace Hősök
                 if (RndItemChance.Next(0, 100) > 50)
                 {
                     Items.SwordCount++;
-                    Inventory.Item.Add("Sword");
+                    Inventory.Items.Add("Sword");
                     Console.WriteLine("You have found a sword");
                 }
             }
@@ -35,7 +35,7 @@ namespace Hősök
                 if (RndItemChance.Next(0, 100) > 50)
                 {
                     Items.LeatherArmorCount++;
-                    Inventory.Item.Add("Leather Armor");
+                    Inventory.Items.Add("Leather Armor");
                     Console.WriteLine("You have found a leather armor");
 
                 }
