@@ -19,6 +19,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         public static int EnemyBaseCritChance;
         public static int EnemyBaseCritDamage;
         public static int EnemyXpToGive;
+        public static int EnemyGoldToGive;
         //ValueModifiers
         public static int EnemyWeaponDamageModifier { get; set; }
         public static int EnemyWeaponAttackModifier { get; set; }
@@ -45,6 +46,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
             Enemies.EnemyXpToGive = 10;
+            Enemies.EnemyGoldToGive = 5;
         }
     }
     class TaintedCreator
@@ -60,6 +62,8 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
             Enemies.EnemyXpToGive = 10;
+            Enemies.EnemyGoldToGive = 10;
+
         }
     }
     class NewEnemy

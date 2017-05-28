@@ -19,6 +19,7 @@ namespace Hősök
         public static void RndItem()//Az h mi hullik, függ az ellenféltől és a RndItemChance számtól. Utána hozzáadja az ItemList-hez, és utána ++ az adott item mennyiségéhez
         {
             Random RndItemChance = new Random();
+            Random RndGoldAmount = new Random();
             if (NewEnemy.Randomizer() == 0)//Fallen
             {
                 
@@ -39,6 +40,9 @@ namespace Hősök
 
                 }
             }
+            int GoldFound = RndGoldAmount.Next(0, 30) + Enemies.EnemyGoldToGive;
+            Champions.GoldAmount += GoldFound;
+            Console.WriteLine("You have found " + GoldFound + " pieces of gold");
         }
     }
 }

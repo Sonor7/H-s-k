@@ -18,6 +18,7 @@ namespace Hősök //Attack,defence,hit chance,armor, weapons and modifiers, skil
         public static int BaseHealth;
         public static int XP;
         public static int ChampionLevel;
+        public static int GoldAmount;
         //ValueModifiers
         public static int WeaponDamageModifier;
        // public static int WeaponAttackModifier;
