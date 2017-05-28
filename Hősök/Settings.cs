@@ -95,6 +95,12 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
                 {
                     Center.LocalWannaExit = true;
                     Center.DisplayMenu();
+                    if (Center.ExitCode == true)
+                    {
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                    }
+                    
                 }
                 else { Console.Clear(); }
             }

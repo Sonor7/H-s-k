@@ -16,3 +16,9 @@ C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.pdb
 C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
 C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.exe
 C:\Users\Sonor\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.pdb
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.exe.config
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.exe
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\bin\Debug\Hősök.pdb
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.csprojResolveAssemblyReference.cache
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.exe
+C:\Users\Bela\Documents\GitHub\H-s-k\Hősök\obj\Debug\Hősök.pdb
