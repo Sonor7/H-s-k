@@ -30,6 +30,8 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         public static int EnemyTotalDamage = EnemyBaseDamage + EnemyWeaponDamageModifier;
         public static int EnemyTotalDefence = EnemyBaseDefence + EnemyArmorModifier;
         public static int EnemyTotalHitChance = EnemyBaseHitChance + EnemyHitChanceModifier;
+        //Misc
+        public static int RndEnemyNumber;
 
 
     }
@@ -41,7 +43,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 10;
+            Enemies.EnemyBaseHitChance = 30;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
@@ -57,7 +59,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 10;
+            Enemies.EnemyBaseHitChance = 30;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
@@ -68,25 +70,26 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
     }
     class NewEnemy
     {
-        public static int Randomizer()
+        public static void Randomizer()
         {
-            Random RndEnemy = new Random();
-            int EnemyNumber = RndEnemy.Next(0, 1);
-            if (EnemyNumber == 0)
+            //Random RndEnemy = new Random();
+            //int EnemyNumber = RndEnemy.Next(0, 1);
+            RndEnemy.RndNumber();
+            if (Enemies.RndEnemyNumber == 0)
             {
                 FallenCreator Fallen = new FallenCreator();
                 Fallen.Fallen();
                 Console.WriteLine("Fallen");
-                return EnemyNumber;
+                //return EnemyNumber;
             }
-            else if (EnemyNumber == 1)
+            else if (Enemies.RndEnemyNumber == 1)
             {
                 TaintedCreator Tainted = new TaintedCreator();
                 Tainted.Tainted();
                 Console.WriteLine("Tainted");
-                return EnemyNumber;
+                //return EnemyNumber;
             }
-            else { return EnemyNumber; }
+            //else { return EnemyNumber; }
         }
     }
     class SetEnemyValues
@@ -95,7 +98,16 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
         {
             Enemies.EnemyTotalDamage = Enemies.EnemyBaseDamage + Enemies.EnemyWeaponDamageModifier;
             Enemies.EnemyTotalDefence = Enemies.EnemyBaseDefence + Enemies.EnemyArmorModifier;
-            Enemies.EnemyTotalHitChance = Enemies.EnemyBaseHitChance + Enemies.EnemyHitChanceModifier;
+            Enemies.EnemyTotalHitChance = (Enemies.EnemyBaseHitChance + Enemies.EnemyHitChanceModifier);
+        }
+    }
+    class RndEnemy
+    {
+        public static void RndNumber()
+        {
+            Random RndEnemyNumber = new Random();
+            Enemies.RndEnemyNumber = RndEnemyNumber.Next(0, 1);
+            
         }
     }
 }   

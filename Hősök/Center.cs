@@ -26,14 +26,19 @@ namespace Hősök
                 if (HasCharacter == false)//Nincs kari, muszáj csinálni egyet
                 {
                     Console.WriteLine("Choose and option!\n Champion Creation(1)\n");
-
+                    
                     LocalCharacterChosen = SetNumber();//Beolvas egy számot int-be.
                     if (LocalCharacterChosen == 1 && HasCharacter == false)//Nincs kari, de akar egy barbárt
                     {
+                        Console.Clear();
                         BarbarianCreator Barb = new BarbarianCreator();
                         Barb.Barbarian();
                         HasCharacter = true;
-                        Console.WriteLine("You have Chosen the mighty barbarian.\n Your journey begins");
+                        Console.WriteLine("You have Chosen the mighty barbarian.");
+                        Console.ReadLine();
+                        Console.Clear();
+                        Console.WriteLine("Your journey begins");
+                        
                     }
                 }
                 DisplayMenu();//Ez itt a játék közepe
@@ -80,6 +85,7 @@ namespace Hősök
         }
         public static void DisplayMenu()
         {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Choose a Menu Option\nEquip Items(1)\nSave(2)\nLoad(3)\nShop(4)\nDiscovery and Fight(5)\nQuit(6)");
             MenuChoice = SetNumber();
             switch (MenuChoice)

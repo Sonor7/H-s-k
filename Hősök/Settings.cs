@@ -46,6 +46,8 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanShop = false;
             CanFight = false;
             CanExit = true;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("You have reached a forest");
             Console.ReadLine();
             return true;
@@ -60,6 +62,8 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanShop = true;
             CanFight = false;
             CanExit = true;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("You have found a tavern, where you can drink, rest, and might even be able to shop");
             Console.ReadLine();
             return true;
@@ -71,12 +75,13 @@ namespace Hősök //Ezek lesznek a helyek, ahova a karakter eljuthat. Csak olyan
             CanFight = true;
             MustFight = true;
             CanExit = false;
-
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("You ventured deep into the forest.\n Something followed you!\n Prepare for trouble");
             //itt következik a harc
             NewEnemy.Randomizer();
             Fight.Battle();
-            Console.ReadLine();
+            //Console.ReadLine();
             return true;
         }
         public static int RandomizeSetting()

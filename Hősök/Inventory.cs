@@ -20,7 +20,8 @@ namespace Hősök
         {
             Random RndItemChance = new Random();
             Random RndGoldAmount = new Random();
-            if (NewEnemy.Randomizer() == 0)//Fallen
+            //Chance = NewEnemy.Randomizer();
+            if (Enemies.RndEnemyNumber == 0)//Fallen
             {
                 
                 if (RndItemChance.Next(0, 100) > 50)
@@ -30,7 +31,7 @@ namespace Hősök
                     Console.WriteLine("You have found a sword");
                 }
             }
-            else if (NewEnemy.Randomizer() == 1)//Tainted
+            else if (Enemies.RndEnemyNumber == 1)//Tainted
             {
                 if (RndItemChance.Next(0, 100) > 50)
                 {

@@ -22,7 +22,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                     ChampionCritChance();
                     LocalChampionDmg = Champions.TotalDamage - Enemies.EnemyTotalDefence;
                     Enemies.EnemyBaseHealth = Enemies.EnemyBaseHealth - LocalChampionDmg;
-                    Console.WriteLine(LocalChampionDmg + "Champ Dmg");
+                    Console.WriteLine(LocalChampionDmg + " Champ Dmg");
                 }
                 else
                 {
@@ -34,7 +34,9 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                     EnemyCritChance();
                     LocalMonsterDmg = Enemies.EnemyTotalDamage - Champions.TotalDefence;
                     Champions.TotalHealth = Champions.TotalHealth - LocalMonsterDmg;
-                    Console.WriteLine(LocalMonsterDmg + "Monster Dmg");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(LocalMonsterDmg + " Monster Dmg");
+                    Console.ForegroundColor = ConsoleColor.Green;
                     if (Champions.TotalHealth < 0)
                     {
                         //Meghalt a hős
@@ -90,8 +92,9 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
             int LocalRndCritChance = RndCritChance.Next(0, 100);
             if (Enemies.EnemyCritChance > LocalRndCritChance)
             {
+                
                 Enemies.EnemyTotalDamage = Enemies.EnemyTotalDamage * Enemies.EnemyCritDamage;
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("Enemy Critical Hit");
                 Console.ResetColor();
             }
