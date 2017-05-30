@@ -43,7 +43,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 30;
+            Enemies.EnemyBaseHitChance = 20;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
@@ -59,7 +59,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseAttack = 10;
             Enemies.EnemyBaseDefence = 1;
             Enemies.EnemyBaseDamage = 1;
-            Enemies.EnemyBaseHitChance = 30;
+            Enemies.EnemyBaseHitChance = 20;
             Enemies.EnemyBaseArmor = 1;
             Enemies.EnemyBaseCritChance = 1;
             Enemies.EnemyBaseCritDamage = 1;
