@@ -1,0 +1,5 @@
+C:\Users\igabor\H-s-k\Hősök\bin\Release\Hősök.exe.config
+C:\Users\igabor\H-s-k\Hősök\bin\Release\Hősök.exe
+C:\Users\igabor\H-s-k\Hősök\bin\Release\Hősök.pdb
+C:\Users\igabor\H-s-k\Hősök\obj\Release\Hősök.exe
+C:\Users\igabor\H-s-k\Hősök\obj\Release\Hősök.pdb
