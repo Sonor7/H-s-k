@@ -45,7 +45,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseDamage = 1;
             Enemies.EnemyBaseHitChance = 20;
             Enemies.EnemyBaseArmor = 1;
-            Enemies.EnemyBaseCritChance = 1;
+            Enemies.EnemyBaseCritChance = 10;
             Enemies.EnemyBaseCritDamage = 1;
             Enemies.EnemyXpToGive = 10;
             Enemies.EnemyGoldToGive = 5;
@@ -61,8 +61,8 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyBaseDamage = 1;
             Enemies.EnemyBaseHitChance = 20;
             Enemies.EnemyBaseArmor = 1;
-            Enemies.EnemyBaseCritChance = 1;
-            Enemies.EnemyBaseCritDamage = 1;
+            Enemies.EnemyBaseCritChance = 10;
+            Enemies.EnemyBaseCritDamage = 10;
             Enemies.EnemyXpToGive = 10;
             Enemies.EnemyGoldToGive = 10;
 
@@ -99,6 +99,7 @@ namespace Hősök//A newly created enemy should modify the public values, so 1 v
             Enemies.EnemyTotalDamage = Enemies.EnemyBaseDamage + Enemies.EnemyWeaponDamageModifier;
             Enemies.EnemyTotalDefence = Enemies.EnemyBaseDefence + Enemies.EnemyArmorModifier;
             Enemies.EnemyTotalHitChance = (Enemies.EnemyBaseHitChance + Enemies.EnemyHitChanceModifier);
+            Enemies.EnemyCritChance = (Enemies.EnemyBaseCritChance);
         }
     }
     class RndEnemy

@@ -89,7 +89,8 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                 Console.WriteLine("Champion Critical Hit");
                 Console.ResetColor();
             }
-            
+            //else { Console.WriteLine("What is going on Champ"); }
+
         }
         public static void EnemyCritChance()
         {
@@ -104,6 +105,7 @@ namespace Hősök// Egy kör = Hős talál-e?Hős crittel-e?Ha Igen, mennyit seb
                 Console.WriteLine("Enemy Critical Hit");
                 Console.ResetColor();
             }
+            //else { Console.WriteLine("What is going on Enemy"); }
 
         }
     }
